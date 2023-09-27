@@ -1,0 +1,61 @@
+name: Deploy Prod
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm lint
+
+      - run: pnpm i -g vercel@canary
+
+      - run: vercel link --project sagacity --confirm --token ${{ secrets.VERCEL_TOKEN }}
+
+      - run: vercel env pull .env --token ${{ secrets.VERCEL_TOKEN }}
+
+      - run: |
+          vercel ./ \
+          --token ${{ secrets.VERCEL_TOKEN }} \
+          --prod \
+          --env NODE_ENV=production \
+          --yes
+
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
