@@ -29,12 +29,6 @@
       "@lib/*": [
         "lib/*"
       ],
-      "@hooks/*": [
-        "hooks/*"
-      ],
-      "@stores/*": [
-        "stores/*"
-      ]
     },
     "plugins": [
       {

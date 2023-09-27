@@ -46,7 +46,7 @@ jobs:
 
       - run: pnpm i -g vercel@canary
 
-      - run: vercel link --project sagacity --confirm --token ${{ secrets.VERCEL_TOKEN }}
+      - run: vercel link --project judegiordano.com --confirm --token ${{ secrets.VERCEL_TOKEN }}
 
       - run: vercel env pull .env --token ${{ secrets.VERCEL_TOKEN }}
 
