@@ -12,7 +12,7 @@ export const baseMetaData: Metadata = {
 		description: 'Solution-driven professional excelling in developing products for web, desktop, and mobile app users. Meeting the highest standards for SEO, UX, and performance.',
 		title: 'Jude Giordano Portfolio',
 		siteName: 'Jude Giordano',
-		url: 'https://judegiordano-portfolio.vercel.app/',
+		url: 'https://judegiordano.com',
 		images: {
 			url: '/san-fran.webp',
 			width: 512,

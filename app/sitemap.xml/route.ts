@@ -1,5 +1,4 @@
-// TODO: update this with domain
-const domain = 'judegiordano-portfolio.vercel.app'
+const domain = 'judegiordano.com'
 
 const generateSitemap = async () => {
 	const now = new Date().toISOString()
