@@ -17,10 +17,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" data-theme="garden">
 			<body className={poppins.className}>
-				{/* @ts-expect-error Server Component */}
-				<NavBar />
-				<div className='text-center'>
-					{children}
+				<div className='w-full h-screen'>
+					{/* @ts-expect-error Server Component */}
+					<NavBar />
+					<div className='text-center'>
+						{children}
+					</div>
 				</div>
 				<Footer />
 			</body>
