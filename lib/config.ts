@@ -5,6 +5,7 @@ export const RECAPTCHA_SITE_SECRET = process.env.RECAPTCHA_SITE_SECRET as string
 export const NEXT_PUBLIC_RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string
 
 export const baseMetaData: Metadata = {
+	metadataBase: new URL('https://judegiordano.com'),
 	title: 'Jude Giordano',
 	description: 'Jude Giordano Website',
 	icons: '/favicon.ico',

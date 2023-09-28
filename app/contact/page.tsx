@@ -5,7 +5,7 @@ import { baseMetaData } from '@lib/config'
 import { ContactForm } from '@ui/components/contact/ContactForm'
 
 export const metadata = {
-	title: `${baseMetaData.title} | About`
+	title: `${baseMetaData.title} | Contact`
 }
 
 export default function Page() {
