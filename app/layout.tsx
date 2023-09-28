@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" data-theme="garden">
 			<body className={poppins.className}>
-				<div className='w-full h-screen'>
+				<div className='w-full'>
 					{/* @ts-expect-error Server Component */}
 					<NavBar />
 					<div className='text-center'>
