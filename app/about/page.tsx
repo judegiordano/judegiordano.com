@@ -1,12 +1,13 @@
 import React from 'react'
 
 import { Divider } from '@ui/Divider'
+import { baseMetaData } from '@lib/config'
 
 export const metadata = {
-	title: 'Jude Giordano | About'
+	title: `${baseMetaData.title} | About`
 }
 
-export default function AboutPage() {
+export default function Page() {
 	return (
 		<div className='px-5'>
 			<div className="max-w-[700px] m-auto">

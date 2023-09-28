@@ -1,12 +1,13 @@
 import React from 'react'
 
 import backdrop from '../public/san-fran.webp'
+import { baseMetaData } from '@lib/config'
 
 export const metadata = {
-	title: 'Jude Giordano | Home'
+	title: `${baseMetaData.title} | Home`
 }
 
-export default function HomePage() {
+export default function Page() {
 	return (
 		<div className='h-screen bg-center bg-cover' style={{ backgroundImage: `url(${backdrop.src})` }}>
 			<div className='text-center'>
