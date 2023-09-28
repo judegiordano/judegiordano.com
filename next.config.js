@@ -4,9 +4,6 @@ const nextConfig = {
 	swcMinify: true,
 	trailingSlash: false,
 	poweredByHeader: false,
-	experimental: {
-		appDir: true
-	},
 	compress: true,
 	async headers() {
 		return [
