@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
 
+export const RECAPTCHA_SITE_SECRET = process.env.RECAPTCHA_SITE_SECRET as string
+// public
+export const NEXT_PUBLIC_RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string
+
 export const baseMetaData: Metadata = {
 	title: 'Jude Giordano',
 	description: 'Jude Giordano Website',
